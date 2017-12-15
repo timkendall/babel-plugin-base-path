@@ -1,0 +1,50 @@
+{
+  "name": "babel-plugin-base-path",
+  "version": "0.1.0",
+  "description": "Add first-class support for transforming relative asset paths to absolute one's.",
+  "main": "index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "babel src -d lib",
+    "test": "ava",
+    "test:watch": "npm run test -- --watch",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timkendall/babel-plugin-base-path.git"
+  },
+  "keywords": [
+    "babel-plugin",
+    "basePath",
+    "url",
+    "replace"
+  ],
+  "author": "Tim Kendall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timkendall/babel-plugin-base-path/issues"
+  },
+  "homepage": "https://github.com/timkendall/babel-plugin-base-path#readme",
+  "ava": {
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ],
+    "babel": "inherit"
+  },
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "babel-types": "^6.26.0"
+  }
+}

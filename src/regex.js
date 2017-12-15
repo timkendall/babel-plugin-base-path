@@ -1,0 +1,1 @@
+export const RELATIVE_URL_REGEX = /(\/)(\w|\d|\s|\/)*(.svg|.png|.jpg|.jpeg|.gif)/g
