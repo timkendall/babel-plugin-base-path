@@ -56,3 +56,19 @@ export const isStyledComponent = (tag, state) => {
     )
   }
 }
+
+
+export const replaceMatchesInString = (string, matches, cb) => {
+  let transformedString = string
+
+  for (let i = 0; i < matches.length; ++i) {
+    const match = matches[i]
+    const replacement = cb(match)
+
+    // Note: Swap in the prefixed URL
+    transformedString = transformedString
+      .replace(match, replacement)
+  }
+
+  return transformedString
+}

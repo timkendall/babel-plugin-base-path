@@ -1,20 +1,21 @@
 import templateLiterals from './visitors/template-literals'
+//import stringLiteral from './visitors/string-literal'
+import objectMember from './visitors/object-member'
 
 export default function({ types: t }) {
   return {
     visitor: {
-      // ImportDeclaration(path, state) {
-      //   noParserImportDeclaration(path, state)
-      // },
-      // CallExpression(path, state) {
-      //   noParserRequireCallExpression(path, state)
-      // },
+      StringLiteral(path, state) {
+        // TODO
+      },
+
       TaggedTemplateExpression(path, state) {
         templateLiterals(path, state)
       },
-      // VariableDeclarator(path, state) {
-      //   assignStyledRequired(path, state)
-      // }
+
+      ObjectMember(path, state) {
+        objectMember(path, state)
+      },
     }
   }
 }
