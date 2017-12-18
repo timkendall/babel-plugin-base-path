@@ -6,11 +6,16 @@ export default (path, state) => {
   const urlPrefix = getOption(state, 'base')
   const objectValue = path.node.value
 
-  if (t.isStringLiteral(objectValue)) {
+  if (t.isStringLiteral(objectValue) && !objectValue.value.includes('http')) {
     const { value } = objectValue
     const relativeURLsMatches = value.match(RELATIVE_URL_REGEX) || []
     const stringWithAbsoluteURLs = replaceMatchesInString(value, relativeURLsMatches, (match) => urlPrefix + match)
 
-    path.node.value = t.stringLiteral(stringWithAbsoluteURLs)
+    path.replaceWith(
+      t.objectProperty(
+        path.node.key, // Identifier 
+        t.stringLiteral(stringWithAbsoluteURLs), // StringLiteral
+      )
+    )
   }
 }

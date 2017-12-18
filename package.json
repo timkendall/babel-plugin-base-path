@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-base-path",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Add first-class support for transforming relative asset paths to absolute one's.",
   "main": "lib/index.js",
   "files": [
