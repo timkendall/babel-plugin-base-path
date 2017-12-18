@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "transform-react-jsx",
+    ["../../../src", {
+      "base": "https://foo.com"
+    }]
+  ]
+}

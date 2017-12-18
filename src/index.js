@@ -1,5 +1,4 @@
 import templateLiterals from './visitors/template-literals'
-//import stringLiteral from './visitors/string-literal'
 import objectMember from './visitors/object-member'
 
 export default function({ types: t }) {
