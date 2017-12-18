@@ -1,2 +1,33 @@
 # babel-plugin-base-path
-Add first-class support for transforming relative asset paths to absolute one's.
+
+**Note: This is still experimental! Use at your own risk.**
+
+Adds first-class support for transforming relative asset paths to absolute one's.
+
+## Quickstart
+
+Install the plugin:
+
+`yarn add --dev babel-plugin-base-path`
+
+Add it to your Babel configuration:
+
+```json
+{
+  "plugins": [
+    ["base-path", {
+      "base": "https://foo.com"
+    }]
+  ]
+}
+```
+
+## Documentation
+
+TODO
+
+## License
+
+Licensed under the MIT License, Copyright © 2017 Tim Kendall.
+
+See [LICENSE.md](./LICENSE.md) for more information.
