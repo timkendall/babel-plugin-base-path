@@ -11,11 +11,6 @@ export default (path, state) => {
     const relativeURLsMatches = value.match(RELATIVE_URL_REGEX) || []
     const stringWithAbsoluteURLs = replaceMatchesInString(value, relativeURLsMatches, (match) => urlPrefix + match)
 
-    path.replaceWith(
-      t.objectProperty(
-        path.node.key, // Identifier 
-        t.stringLiteral(stringWithAbsoluteURLs), // StringLiteral
-      )
-    )
+    path.node.value = t.stringLiteral(stringWithAbsoluteURLs)
   }
 }
