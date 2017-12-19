@@ -2,7 +2,11 @@
 
 **Note: This is still experimental! Use at your own risk.**
 
-Adds first-class support for transforming relative asset paths to absolute one's.
+Adds first-class support for transforming relative asset paths to absolute one's. The goal of this plugin is to support native AST transforms for:
+
+1. Object fields
+2. String literals
+3. Template strings
 
 ## Quickstart
 
